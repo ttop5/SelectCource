@@ -10,7 +10,7 @@
 <head>
     <title>选课管理信息系统</title>
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/css/hello.css" rel="stylesheet">
+    <link href="../static/css/index.css" rel="stylesheet">
 </head>
 <body>
 
