@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <h2>学生选课管理信息系统登陆</h2>
+    <h2>选课管理信息系统登陆</h2>
 
     <div class="container">
 

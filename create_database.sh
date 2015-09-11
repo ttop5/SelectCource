@@ -14,7 +14,7 @@ major varchar(100),
 class varchar(100),
 qq varchar(20),
 phone varchar(20),
-email varchar(60) NOT NULL,
+email varchar(60) NOT NULL UNIQUE,
 password varchar(120) NOT NULL,
 adress varchar(200),
 role int(2) NOT NULL DEFAULT '2' 

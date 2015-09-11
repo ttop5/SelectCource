@@ -26,6 +26,7 @@ public class UserDao {
                 resultUser.setEmail(rs.getString("email"));
                 resultUser.setPassword(rs.getString("password"));
             }
+
             return resultUser;
         }catch (Exception e){
             e.printStackTrace();

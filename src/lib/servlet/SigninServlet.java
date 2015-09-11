@@ -51,7 +51,7 @@ public class SigninServlet extends HttpServlet {
             else{
                 HttpSession session = req.getSession();
                 session.setAttribute("currentUser", currentUser);
-                resp.sendRedirect("hello.jsp");
+                resp.sendRedirect("student/index.jsp");
             }
         }
         catch (Exception e){
