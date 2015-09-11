@@ -8,13 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title></title>
+  <title>登陆|学生选课信息管理系统</title>
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
     <link href="static/css/signin.css" rel="stylesheet">
 </head>
 <body>
 
-    <h2>SDUT学生选课信息管理系统</h2>
+    <h2>学生选课管理信息系统登陆</h2>
 
     <div class="container">
 
