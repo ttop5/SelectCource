@@ -35,8 +35,9 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="index.jsp">首页</a></li>
-                    <li><a href="notes.jsp" target="notes">公告</a></li>
+                    <li><a href="notes.jsp">公告</a></li>
                     <li><a href="scource.jsp">选课</a></li>
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">信息查询 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -45,6 +46,7 @@
                             <li><a href="infoclassroom.jsp">教室查询</a></li>
                         </ul>
                     </li>
+                    <li><a href="changeinfo.jsp">个人信息修改</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="../signout.jsp">注销</a></li>
