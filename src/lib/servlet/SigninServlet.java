@@ -48,10 +48,16 @@ public class SigninServlet extends HttpServlet {
                 req.setAttribute("error", "用户名或密码错误！");
                 req.getRequestDispatcher("index.jsp").forward(req, resp);
             }
-            else{
+            else {
                 HttpSession session = req.getSession();
                 session.setAttribute("currentUser", currentUser);
-                resp.sendRedirect("student/index.jsp");
+                if (currentUser.getRole() == 0) {
+                    resp.sendRedirect("admin/index.jsp");
+                } else if (currentUser.getRole() == 1){
+                    resp.sendRedirect("teacher/index.jsp");
+                } else {
+                    resp.sendRedirect("student/index.jsp");
+                }
             }
         }
         catch (Exception e){
