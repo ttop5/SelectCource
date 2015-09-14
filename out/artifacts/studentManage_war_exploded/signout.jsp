@@ -18,8 +18,12 @@
 
   <p>
     ：）您已成功注销！<br/><br/>
-    再次登陆请点击<a href="index.jsp"> 这儿 </a>。
+    两秒后将自动跳转至登陆页面。
   </p>
+
+  <%
+    response.setHeader("refresh","2;url=index.jsp");
+  %>
 
 </body>
 </html>

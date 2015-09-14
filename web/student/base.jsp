@@ -45,7 +45,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">信息维护 <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人信息 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="changepasswd.jsp">密码修改</a></li>
                             <li><a href="changeinfo.jsp">个人信息修改</a></li>

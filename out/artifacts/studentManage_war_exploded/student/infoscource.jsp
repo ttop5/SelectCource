@@ -15,7 +15,7 @@
 
   <div class="container">
     <div class="page-header">
-      <h2>选课查询</h2>
+      <h2>选课情况查询</h2>
     </div>
   </div>
 
