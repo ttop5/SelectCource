@@ -35,25 +35,23 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="index.jsp">首页</a></li>
-                    <li><a href="notes.jsp">公告</a></li>
-                    <li><a href="scource.jsp">选课</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">信息查询 <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户管理 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="infoscore.jsp">成绩查询</a></li>
-                            <li><a href="infoscource.jsp">选课情况查询</a></li>
+                            <li><a href="user.jsp">所有用户</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">信息维护 <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">信息管理 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="changepasswd.jsp">密码修改</a></li>
-                            <li><a href="changeinfo.jsp">个人信息修改</a></li>
+                            <li><a href="notes.jsp">公告管理</a></li>
+                            <li><a href="score.jsp">成绩管理</a></li>
+                            <li><a href="scource.jsp">选修课管理</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a>欢迎您，${currentUser.name}</a></li>
+                    <li><a>欢迎您：${currentUser.name}</a></li>
                     <li><a href="../signout.jsp">注销</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
