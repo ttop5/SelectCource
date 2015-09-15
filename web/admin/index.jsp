@@ -17,6 +17,7 @@
     <div class="page-header">
       <h2>选课管理信息系统-admin</h2>
     </div>
+
   </div>
 
 </body>
