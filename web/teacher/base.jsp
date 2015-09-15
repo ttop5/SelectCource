@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ttop5
@@ -19,6 +20,14 @@
             response.sendRedirect("../index.jsp");
         }
     %>
+
+    <c:if test="${currentUser.role == 0}">
+        <% response.sendRedirect("../admin/index.jsp"); %>
+    </c:if>
+    <c:if test="${currentUser.role == 2}">
+        <% response.sendRedirect("../student/index.jsp"); %>
+    </c:if>
+
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">

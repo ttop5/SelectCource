@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ttop5
@@ -19,6 +20,13 @@
             response.sendRedirect("../index.jsp");
         }
     %>
+
+    <c:if test="${currentUser.role == 0}">
+        <% response.sendRedirect("../admin/index.jsp"); %>
+    </c:if>
+    <c:if test="${currentUser.role == 1}">
+        <% response.sendRedirect("../teacher/index.jsp"); %>
+    </c:if>
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -53,7 +61,7 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a>欢迎您，${currentUser.name}</a></li>
+                    <li><a>欢迎您，${currentUser.name}同学！</a></li>
                     <li><a href="../signout.jsp">注销</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
