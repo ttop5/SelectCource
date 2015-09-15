@@ -67,7 +67,7 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a>欢迎您：${currentUser.name}</a></li>
+                    <li><a>欢迎您：${currentUser.name}！</a></li>
                     <li><a href="../signout.jsp">注销</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
