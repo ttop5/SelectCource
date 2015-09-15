@@ -1,10 +1,9 @@
 # studentManage
 
----
-
 Java和数据库实训项目(请自动忽略studentManage这个文不对题的项目名称)。
 
-## 题目:
+
+### 题目:
 
 - **学生选课管理信息系统**
     
@@ -17,7 +16,8 @@ Java和数据库实训项目(请自动忽略studentManage这个文不对题的�
     > + 按一定条件可以查询所有信息
 
 
-## 开发环境：
+
+### 开发环境：
 
 ubuntu 15.04 + Intellij IDEA + git
 
