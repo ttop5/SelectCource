@@ -28,8 +28,17 @@ INSERT INTO user VALUES ('', '13110581072', 'ttop5', '男', '2013', '计算机�
 CREATE TABLE notes(
 id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 title varchar(50) NOT NULL,
-time date NOT NULL,
+start_time date NOT NULL,
+stop_time date NOT NULL,
 description varchar(1000) NOT NULL
+)CHARSET=utf8;
+
+INSERT INTO notes VALUES ('', '关于全校大一同学的选课通知', '2015-09-16', '2015-09-17', '此次选课将持续一周的时间，共三次机会，请同学们按时限选课，完成应修的学分。注：大一的每学期最多选两门课！');
+
+CREATE TABLE classroom(
+id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+capacity  int(5) NOT NULL,
+location varchar(10) NOT NULL
 )CHARSET=utf8;
 
 CREATE TABLE cource(
@@ -37,8 +46,10 @@ id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 student_id int(11) NOT NULL,
 cource varchar(20) NOT NULL,
 teacher_id int(11) NOT NULL,
+classroom_id int(11) NOT NULL,
 CONSTRAINT cource_student FOREIGN KEY (student_id) REFERENCES user(id),
-CONSTRAINT cource_teacher FOREIGN KEY (teacher_id) REFERENCES user(id)
+CONSTRAINT cource_teacher FOREIGN KEY (teacher_id) REFERENCES user(id),
+CONSTRAINT cource_classroom FOREIGN KEY (classroom_id) REFERENCES classroom(id)
 )CHARSET=utf8;
 
 CREATE TABLE score(
