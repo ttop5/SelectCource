@@ -21,5 +21,5 @@ Java和数据库实训项目(请自动忽略studentManage这个文不对题的�
 
 ### 开发环境：
 
-ubuntu 15.04 + Intellij IDEA + git
+ubuntu 15.04 + tomcat7 + Intellij IDEA + git
 
