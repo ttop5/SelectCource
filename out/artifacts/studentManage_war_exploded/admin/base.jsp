@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="lib.Dao.AdminDAO" %>
 <%--
   Created by IntelliJ IDEA.
   User: ttop5
@@ -12,6 +13,7 @@
     <title>选课管理信息系统</title>
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
     <link href="../static/css/index.css" rel="stylesheet">
+    <link href="../static/css/admin.css" rel="stylesheet">
 </head>
 <body>
 
@@ -45,23 +47,30 @@
                 <ul class="nav navbar-nav">
                     <li><a href="index.jsp">首页</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">公告管理 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="notes.jsp">公告管理</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户管理 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="useradd.jsp">添加用户</a></li>
                             <li><a href="user.jsp">所有用户</a></li>
-                            <li><a href="importuser.jsp">用户批量导入</a></li>
+                            <li><a href="userimport.jsp">用户批量导入</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">信息管理 <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">公告管理 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="notesadd.jsp">添加公告</a></li>
+                            <li><a href="notesmanage.jsp">公告管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">课程管理 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="courceadd.jsp">添加课程</a></li>
                             <li><a href="cource.jsp">课程管理</a></li>
-                            <li><a href="class.jsp">班级管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学生成绩管理 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
                             <li><a href="score.jsp">学生成绩管理</a></li>
                         </ul>
                     </li>

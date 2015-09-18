@@ -14,9 +14,12 @@
 <body>
 
   <div class="container">
-    <div class="page-header">
-      <h2>所有用户</h2>
-    </div>
+      <h5><b>当前位置</b>：用户管理 > 所有用户</h5>
+      <hr>
+      <div>
+          <% AdminDAO adminDao = new AdminDAO();%>
+          <%=adminDao.getUser()%>
+      </div>
   </div>
 
 </body>

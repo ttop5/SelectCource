@@ -1,8 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="lib.Dao.AdminDAO" %>
 <%--
   Created by IntelliJ IDEA.
   User: ttop5
-  Date: 15-9-14
-  Time: 上午8:49
+  Date: 15-9-15
+  Time: 下午8:01
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -14,11 +16,11 @@
 <body>
 
   <div class="container">
-      <h5><b>当前位置</b>：用户管理 > 所有用户</h5>
+      <h5><b>当前位置</b>：公告管理 > 公告管理</h5>
       <hr>
       <div>
-          <% AdminDAO adminDao = new AdminDAO();%>
-          <%=adminDao.getUser()%>
+        <% AdminDAO adminDao = new AdminDAO();%>
+        <%=adminDao.getNotes()%>
       </div>
   </div>
 

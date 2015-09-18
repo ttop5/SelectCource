@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: ttop5
-  Date: 15-9-14
-  Time: 下午11:32
+  Date: 15-9-17
+  Time: 下午5:00
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,11 +13,10 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="page-header">
-      <h2>班级管理</h2>
+    <div class="container">
+        <h5><b>当前位置</b>：用户管理 > 添加用户</h5>
+        <hr>
     </div>
-  </div>
 
 </body>
 </html>

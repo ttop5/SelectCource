@@ -14,8 +14,11 @@
 <body>
 
   <div class="container">
-    <div class="page-header">
-      <h2>课程管理</h2>
+    <h5><b>当前位置</b>：课程管理 > 课程管理</h5>
+    <hr>
+    <div>
+      <% AdminDAO adminDao = new AdminDAO();%>
+      <%=adminDao.getCource()%>
     </div>
   </div>
 
