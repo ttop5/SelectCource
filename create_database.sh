@@ -62,17 +62,6 @@ INSERT INTO cource VALUES('', '佛教文化', '3', '2');
 INSERT INTO cource VALUES('', '西方艺术鉴赏', '2', '3');
 INSERT INTO cource VALUES('', '新能源技术', '3', '4');
 
-CREATE TABLE scource(
-scource_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-student int(11) NOT NULL,
-cource varchar(20) NOT NULL,
-CONSTRAINT scource_student FOREIGN KEY (student) REFERENCES user(User_id)
-)CHARSET=utf8;
-
-INSERT INTO scource VALUES ('', '4', '1');
-INSERT INTO scource VALUES ('', '4', '2');
-INSERT INTO scource VALUES ('', '5', '3');
-
 CREATE TABLE score(
 score_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 student int(11) NOT NULL, 
