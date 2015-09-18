@@ -22,7 +22,8 @@ role int(2) NOT NULL DEFAULT '2'
 )CHARSET=utf8;
 
 INSERT INTO user VALUES ('', '1234567890', 'admin', '', '', '', '', '', '', '', 'admin@qq.com', 'passwd', '', '0'); 
-INSERT INTO user VALUES ('', '1234567', 'teacher', '女', '', '机械工程学院', '', '', '', '', 'teacher@qq.com', 'passwd', '', '1'); 
+INSERT INTO user VALUES ('', '1234567', 'teacher1', '女', '', '机械工程学院', '', '', '', '', 'teacher1@qq.com', 'passwd', '', '1'); 
+INSERT INTO user VALUES ('', '1234567', 'teacher2', '男', '', '材料学院', '', '', '', '', 'teacher2@qq.com', 'passwd', '', '1'); 
 INSERT INTO user VALUES ('', '13110581072', 'ttop5', '男', '2013', '计算机科学与技术学院', '计算机科学与技术', '计科1302', '1427154738', '18753377101', 'ttop5@qq.com', 'passwd', '云南省昆明市石林县', '2');
 
 CREATE TABLE notes(
@@ -41,24 +42,45 @@ capacity  int(5) NOT NULL,
 location varchar(10) NOT NULL
 )CHARSET=utf8;
 
+INSERT INTO classroom VALUES ('', '80', '3#101');
+INSERT INTO classroom VALUES ('', '160', '3#206');
+INSERT INTO classroom VALUES ('', '80', '4#101');
+INSERT INTO classroom VALUES ('', '160', '5#206');
+
 CREATE TABLE cource(
 id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-student_id int(11) NOT NULL,
 cource varchar(20) NOT NULL,
 teacher_id int(11) NOT NULL,
 classroom_id int(11) NOT NULL,
-CONSTRAINT cource_student FOREIGN KEY (student_id) REFERENCES user(id),
 CONSTRAINT cource_teacher FOREIGN KEY (teacher_id) REFERENCES user(id),
 CONSTRAINT cource_classroom FOREIGN KEY (classroom_id) REFERENCES classroom(id)
 )CHARSET=utf8;
 
+INSERT INTO cource VALUES('', '计算机网络', '2', '1');
+INSERT INTO cource VALUES('', '佛教文化', '3', '2');
+INSERT INTO cource VALUES('', '西方艺术鉴赏', '2', '3');
+INSERT INTO cource VALUES('', '新能源技术', '3', '4');
+
+CREATE TABLE scource(
+id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+student_id int(11) NOT NULL,
+cource varchar(20) NOT NULL,
+CONSTRAINT scource_student FOREIGN KEY (student_id) REFERENCES user(id)
+)CHARSET=utf8;
+
+INSERT INTO scource VALUES ('', '3', '1');
+INSERT INTO scource VALUES ('', '3', '2');
+
 CREATE TABLE score(
 id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-user_id int(11) NOT NULL, 
+student_id int(11) NOT NULL, 
 cource_id int(11) NOT NULL, 
 score varchar(5) NOT NULL,
-CONSTRAINT score_user FOREIGN KEY (user_id) REFERENCES user(id),
+CONSTRAINT score_student FOREIGN KEY (student_id) REFERENCES user(id),
 CONSTRAINT score_cource FOREIGN KEY (cource_id) REFERENCES cource(id)
 )CHARSET=utf8;
+
+INSERT INTO score VALUES('', '3', '1', '95');
+INSERT INTO score VALUES('', '3', '2', '60');
 
 EOF
