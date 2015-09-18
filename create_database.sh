@@ -6,7 +6,7 @@ USE student_manage;
 
 CREATE TABLE user(
 user_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-school_num int(20) NOT NULL UNIQUE,
+school_num varchar(20) NOT NULL UNIQUE,
 name varchar(50) NOT NULL,
 sex varchar(10),
 grade varchar(100),
@@ -25,6 +25,7 @@ INSERT INTO user VALUES ('', '1234567890', 'admin', '', '', '', '', '', '', '', 
 INSERT INTO user VALUES ('', '1234567', 'teacher1', '女', '', '机械工程学院', '', '', '', '', 'teacher1@qq.com', 'passwd', '', '1'); 
 INSERT INTO user VALUES ('', '2234567', 'teacher2', '男', '', '材料学院', '', '', '', '', 'teacher2@qq.com', 'passwd', '', '1'); 
 INSERT INTO user VALUES ('', '13110581072', 'ttop5', '男', '2013', '计算机科学与技术学院', '计算机科学与技术', '计科1302', '1427154738', '18753377101', 'ttop5@qq.com', 'passwd', '云南省昆明市石林县', '2');
+INSERT INTO user VALUES ('', '13110581073', '何艳红', '男', '2015', '音乐学院', '古典音乐', '古典1501', '1427155518', '18753377104', 'heyanhong@qq.com', 'passwd', '山东省青岛市', '2');
 
 CREATE TABLE notes(
 notes_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -70,6 +71,7 @@ CONSTRAINT scource_student FOREIGN KEY (student) REFERENCES user(User_id)
 
 INSERT INTO scource VALUES ('', '4', '1');
 INSERT INTO scource VALUES ('', '4', '2');
+INSERT INTO scource VALUES ('', '5', '3');
 
 CREATE TABLE score(
 score_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -82,5 +84,6 @@ CONSTRAINT score_cource FOREIGN KEY (cource) REFERENCES cource(cource_id)
 
 INSERT INTO score VALUES('', '4', '1', '95');
 INSERT INTO score VALUES('', '4', '2', '60');
+INSERT INTO score VALUES('', '5', '3', '82');
 
 EOF

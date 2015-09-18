@@ -75,7 +75,7 @@ public class AdminDAO {
         return str;
     }
 
-    public String getscore() throws SQLException{
+    public String getScore() throws SQLException{
         Statement stmt = null;
         Dbutil dbutil = new Dbutil();
         Connection con = null;
@@ -88,7 +88,7 @@ public class AdminDAO {
             String sql = "select school_num, name, cource_name, score from score, user, cource where student=user_id and cource=cource_id" + ";";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
-                str = str + "<tr>" + "<td>" + rs.getInt("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("score") + "</td>" + "</tr>";
+                str = str + "<tr>" + "<td>" + rs.getString("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("score") + "</td>" + "</tr>";
             }
             return str + "</table>";
         }catch (Exception e) {

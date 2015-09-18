@@ -18,7 +18,7 @@
     <hr>
     <div>
       <% AdminDAO adminDao = new AdminDAO();%>
-      <%=adminDao.getscore()%>
+      <%=adminDao.getScore()%>
     </div>
   </div>
 
