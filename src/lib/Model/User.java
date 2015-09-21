@@ -8,8 +8,8 @@ public class User {
     private String password;
     private int role;
     private String name;
-    public User(){
 
+    public User(){
         super();
     }
     public User (String email, String password){
