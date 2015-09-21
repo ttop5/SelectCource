@@ -14,9 +14,10 @@
 <body>
 
   <div class="container">
-    <div class="page-header">
-      <h2>个人信息修改</h2>
-    </div>
+    <h5><b>当前位置</b>：个人信息 > 个人信息修改</h5>
+    <hr>
+    <% StudentDAO studentDAO = new StudentDAO();%>
+    <%=studentDAO.getUser()%>
   </div>
 
 </body>

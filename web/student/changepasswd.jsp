@@ -14,9 +14,8 @@
 <body>
 
   <div class="container">
-    <div class="page-header">
-      <h2>密码修改</h2>
-    </div>
+    <h5><b>当前位置</b>：个人信息 > 密码修改</h5>
+    <hr>
   </div>
 
 </body>

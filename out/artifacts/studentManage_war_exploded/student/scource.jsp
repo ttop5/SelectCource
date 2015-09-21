@@ -14,9 +14,8 @@
 <body>
 
   <div class="container">
-    <div class="page-header">
-      <h2>选课</h2>
-    </div>
+    <h5><b>当前位置</b>：选课</h5>
+    <hr>
   </div>
 
 </body>

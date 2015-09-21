@@ -14,8 +14,11 @@
 <body>
 
   <div class="container">
-    <div class="page-header">
-      <h2>成绩查询</h2>
+    <h5><b>当前位置</b>：信息查询 > 成绩查询</h5>
+    <hr>
+    <div>
+      <% StudentDAO studentDAO = new StudentDAO();%>
+      <%=studentDAO.getScore()%>
     </div>
   </div>
 

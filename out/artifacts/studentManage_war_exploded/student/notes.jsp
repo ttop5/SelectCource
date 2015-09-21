@@ -1,3 +1,4 @@
+<%@ page import="lib.Dao.StudentDAO" %>
 <%--
   Created by IntelliJ IDEA.
   User: ttop5
@@ -14,9 +15,10 @@
 <body>
 
   <div class="container">
-    <div class="page-header">
-      <h2>公告</h2>
-    </div>
+    <h5><b>当前位置</b>：公告</h5>
+    <hr>
+    <% StudentDAO studentDAO = new StudentDAO();%>
+    <%=studentDAO.getNotes()%>
   </div>
 
 </body>
