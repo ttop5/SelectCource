@@ -30,8 +30,8 @@ INSERT INTO user VALUES ('', '13110581073', '何艳红', '男', '2015', '音乐�
 CREATE TABLE notes(
 notes_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 title varchar(50) NOT NULL,
-start_time date NOT NULL,
-stop_time date NOT NULL,
+start_time varchar(12) NOT NULL,
+stop_time varchar(12) NOT NULL,
 description varchar(1000) NOT NULL
 )CHARSET=utf8;
 
