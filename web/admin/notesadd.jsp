@@ -16,22 +16,22 @@
 <div class="container">
     <h5><b>当前位置</b>：公告管理 > 添加公告</h5>
     <hr>
-        <div id="notesadd">
+        <div>
             <form  action="../notesadd" method="post">
                 <div>
-                    <label>标题</label>
+                    <label style="padding-left: 28px">标题</label> &nbsp;
                     <input type="text" placeholder="Title" name="title" size="26px"/>
                 </div>
                 <div>
-                    <label>开始</label>
-                    <input type="datetime" placeholder="xxxx-xx-xx" name="start_time"/>
+                    <label style="padding-top: 6px">开始时间</label> &nbsp;
+                    <input type="datetime" placeholder="如：2015-01-01" name="start_time"/>
                 </div>
                 <div>
-                    <label>结束</label>
-                    <input type="datetime" placeholder="xxxx-xx-xx" name="stop_time"/>
+                    <label style="padding-top: 6px">结束时间</label> &nbsp;
+                    <input type="datetime" placeholder="如：2015-01-01" name="stop_time"/>
                 </div>
                 <div>
-                    <label>内容</label>
+                    <label>公告内容</label> &nbsp;
                     <textarea rows="15" cols="75" name="description"></textarea>
                 </div>
                 <br>
