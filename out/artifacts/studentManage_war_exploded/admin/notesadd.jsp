@@ -16,39 +16,29 @@
 <div class="container">
     <h5><b>当前位置</b>：公告管理 > 添加公告</h5>
     <hr>
-    <div id="notesadd">
-        <br>
-        <form  method="post">
-            <table>
-                <tr>
-                    <tb>标题 </tb>
-                    <tb><input type="text" size="35" name="title"/></tb>
-                </tr>
-                <br/><br/>
-                <tr>
-                    <tb>开始 </tb>
-                    <tb><input type="date" name="start_time"/></tb>
-                </tr>
-                <br/><br/>
-                <tr>
-                    <tb>结束 </tb>
-                    <tb><input type="date" name="stop_time"/></tb>
-                </tr>
-                <br/><br/>
-                <tr>
-                    <tb>公告 </tb>
-                    <tb><textarea rows="12" cols="70" name="noted"></textarea></tb>
-                </tr>
-                <br/><br/>
-                <tr>
-                    &nbsp;&nbsp;
-                    <tb><input type="submit" value="添加"/></tb>
-                    &nbsp;&nbsp;
-                    <tb><input type="reset" value="重置"></tb>
-                </tr>
-            </table>
-        </form>
-    </div>
+        <div id="notesadd">
+            <form  action="../notesadd" method="post">
+                <div>
+                    <label>标题</label>
+                    <input type="text" placeholder="Title" name="title" size="26px"/>
+                </div>
+                <div>
+                    <label>开始</label>
+                    <input type="datetime" placeholder="xxxx-xx-xx" name="start_time"/>
+                </div>
+                <div>
+                    <label>结束</label>
+                    <input type="datetime" placeholder="xxxx-xx-xx" name="stop_time"/>
+                </div>
+                <div>
+                    <label>内容</label>
+                    <textarea rows="15" cols="75" name="description"></textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-default">添加</button>
+                <button type="reset" class="btn btn-default">重置</button>
+            </form>
+        </div>
 </div>
 
 </body>

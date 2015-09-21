@@ -1,13 +1,18 @@
 package lib.Dao;
 import lib.Dao.Dbutil;
+import lib.Model.Notes;
+
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.PreparedStatement;
 
 /**
  * Created by ttop5 on 15-9-17.
  */
+
+    /*数据查询*/
 public class AdminDAO {
     public String getNotes() throws SQLException{
         Statement stmt = null;
@@ -22,7 +27,7 @@ public class AdminDAO {
             String sql = "select * from notes" + ";";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
-                str = str + "<tr>" + "<td>" + rs.getString("title") + "</td>" + "<td>" + rs.getDate("start_time") + "</td>" + "<td>" + rs.getDate("stop_time") + "</td>" + "<td>" + rs.getString("description") + "</td>" + "</tr>";
+                str = str + "<tr>" + "<td>" + rs.getString("title") + "</td>" + "<td>" + rs.getString("start_time") + "</td>" + "<td>" + rs.getString("stop_time") + "</td>" + "<td>" + rs.getString("description") + "</td>" + "</tr>";
             }
             return str + "</table>";
         }catch (Exception e) {
@@ -95,6 +100,26 @@ public class AdminDAO {
             e.printStackTrace();
         }
         return str;
+    }
+
+
+    /*数据插入*/
+    public Notes notesadd(Connection con, Notes notes) throws SQLException {
+        PreparedStatement pst = null;
+
+        try {
+            String sql = "insert into notes (title, start_time, stop_time, description) values (?,?,?,?)";
+            pst = con.prepareStatement(sql);
+            pst.setString(1, notes.getTitle());
+            pst.setString(2, notes.getStart_time());
+            pst.setString(3, notes.getStop_time());
+            pst.setString(4, notes.getDescription ());
+
+            pst.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
