@@ -9,15 +9,16 @@
 <%@include file="base.jsp"%>
 <html>
 <head>
-    <title></title>
+  <title></title>
 </head>
 <body>
 
-  <div class="container">
-    <div class="page-header">
-      <h2>个人信息修改</h2>
-    </div>
-  </div>
+<div class="container">
+  <h5><b>当前位置</b>：个人信息 > 个人信息修改</h5>
+  <hr>
+  <% TeacherDAO teacherDAO = new TeacherDAO();%>
+  <%=teacherDAO.getUser()%>
+</div>
 
 </body>
 </html>

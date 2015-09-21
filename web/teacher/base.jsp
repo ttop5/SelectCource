@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="lib.Dao.TeacherDAO" %>
 <%--
   Created by IntelliJ IDEA.
   User: ttop5
@@ -52,7 +53,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">信息管理 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="class.jsp">班级管理</a></li>
+                            <li><a href="scource.jsp">学生选课管理</a></li>
                             <li><a href="score.jsp">学生成绩管理</a></li>
                         </ul>
                     </li>

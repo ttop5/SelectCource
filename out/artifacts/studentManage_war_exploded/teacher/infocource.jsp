@@ -14,8 +14,11 @@
 <body>
 
   <div class="container">
-    <div class="page-header">
-      <h2>课程查询</h2>
+    <h5><b>当前位置</b>：课程查询 > 课程查询</h5>
+    <hr>
+    <div>
+      <% TeacherDAO teacherDAO = new TeacherDAO();%>
+      <%=teacherDAO.getCource()%>
     </div>
   </div>
 
