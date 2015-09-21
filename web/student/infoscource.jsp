@@ -14,14 +14,12 @@
 <body>
 
   <div class="container">
-    <div class="container">
       <h5><b>当前位置</b>：信息查询 > 选课情况查询</h5>
       <hr>
       <div>
         <% StudentDAO studentDAO = new StudentDAO();%>
         <%=studentDAO.getScource()%>
       </div>
-    </div>
   </div>
 
 </body>
