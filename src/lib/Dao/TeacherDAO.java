@@ -15,36 +15,14 @@ public class TeacherDAO {
         Connection con = null;
         ResultSet rs = null;
         String str = "<table class=\"table table-bordered\" id=\"outside\">" +
-                "<tr><th>课程名</th><th>授课教师</th><th>教室</th></tr>";
+                "<tr><th>课程号</th><th>课程名称</th><th>授课教师</th><th>教室</th><th>上课时间</th></tr>";
         try{
             con = dbutil.getCon();
             stmt = con.createStatement();
-            String sql = "select cource_name, name, location from cource, user, classroom where teacher=user_id and classroom=classroom_id" + ";";
+            String sql = "select cource_id, cource_name, name, location, schooltime from cource, user, classroom where teacher=user_id and classroom=classroom_id" + ";";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
-                str = str + "<tr>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("location") + "</td>" + "</tr>";
-            }
-            return str + "</table>";
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        return str;
-    }
-
-    public String getScource() throws SQLException{
-        Statement stmt = null;
-        Dbutil dbutil = new Dbutil();
-        Connection con = null;
-        ResultSet rs = null;
-        String str = "<table class=\"table table-bordered\" id=\"outside\">" +
-                "<tr><th>学号</th><th>姓名</th><th>课程名</th><th>教室</th></tr>";
-        try{
-            con = dbutil.getCon();
-            stmt = con.createStatement();
-            String sql = "select school_num, name, cource_name, location from score, user, cource, classroom where student=user_id and cource=cource_id and classroom=classroom_id" + ";";
-            rs = stmt.executeQuery(sql);
-            while(rs.next()) {
-                str = str + "<tr>" + "<td>" + rs.getString("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("location") + "</td>" + "</tr>";
+                str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("location") + "</td>" + "<td>" + rs.getString("schooltime") + "</td>" + "</tr>";
             }
             return str + "</table>";
         }catch (Exception e) {
@@ -59,14 +37,36 @@ public class TeacherDAO {
         Connection con = null;
         ResultSet rs = null;
         String str = "<table class=\"table table-bordered\" id=\"outside\">" +
-                "<tr><th>学号</th><th>姓名</th><th>课程名</th><th>成绩</th></tr>";
+                "<tr><th>课程号</th><th>课程名</th><th>学分</th><th>平时成绩</th><th>期末成绩</th><th>最终成绩</th></tr>";
         try{
             con = dbutil.getCon();
             stmt = con.createStatement();
-            String sql = "select school_num, name, cource_name, score from score, user, cource where student=user_id and cource=cource_id" + ";";
+            String sql = "select cource_id, cource_name, credit, pingshi_score, qimo_score, final_score from score, user, cource where student=user_id and cource=cource_id" + ";";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
-                str = str + "<tr>" + "<td>" + rs.getString("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("score") + "</td>" + "</tr>";
+                str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("credit") + "</td>" + "<td>" + rs.getString("pingshi_score") + "</td>" + "<td>" + rs.getString("qimo_score") + "</td>" + "<td>" + rs.getString("final_score") + "</td>" + "</tr>";
+            }
+            return str + "</table>";
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+
+    public String getScource() throws SQLException{
+        Statement stmt = null;
+        Dbutil dbutil = new Dbutil();
+        Connection con = null;
+        ResultSet rs = null;
+        String str = "<table class=\"table table-bordered\" id=\"outside\">" +
+                "<tr><th>课程号</th><th>课程名称</th><th>学分</th><th>教师</th><th>上课时间</th><th>上课地点</th></tr>";
+        try{
+            con = dbutil.getCon();
+            stmt = con.createStatement();
+            String sql = "select cource_id, cource_name, credit, name, schooltime, location from score, user, cource, classroom where teacher=user_id and cource=cource_id and classroom=classroom_id" + ";";
+            rs = stmt.executeQuery(sql);
+            while(rs.next()) {
+                str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("credit") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("schooltime") + "</td>" + "<td>" + rs.getString("location") + "</td>" + "</tr>";
             }
             return str + "</table>";
         }catch (Exception e) {
