@@ -81,14 +81,14 @@ public class AdminDAO {
         Connection con = null;
         ResultSet rs = null;
         String str = "<table class=\"table table-bordered\" id=\"outside\">" +
-                "<tr><th>课程号</th><th>课程名</th><th>学分</th><th>平时成绩</th><th>期末成绩</th><th>最终成绩</th></tr>";
+                "<tr><th>课程号</th><th>课程名</th><th>学分</th><th>学号</th><th>姓名</th><th>平时成绩</th><th>期末成绩</th><th>最终成绩</th></tr>";
         try{
             con = dbutil.getCon();
             stmt = con.createStatement();
-            String sql = "select cource_id, cource_name, credit, pingshi_score, qimo_score, final_score from score, user, cource where student=user_id and cource=cource_id" + ";";
+            String sql = "select cource_id, cource_name, credit, school_num, name, pingshi_score, qimo_score, final_score from score, user, cource where student=user_id and cource=cource_id" + ";";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
-                str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("credit") + "</td>" + "<td>" + rs.getString("pingshi_score") + "</td>" + "<td>" + rs.getString("qimo_score") + "</td>" + "<td>" + rs.getString("final_score") + "</td>" + "</tr>";
+                str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("credit") + "</td>" + "<td>" + rs.getString("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("pingshi_score") + "</td>" + "<td>" + rs.getString("qimo_score") + "</td>" + "<td>" + rs.getString("final_score") + "</td>" + "</tr>";
             }
             return str + "</table>";
         }catch (Exception e) {
