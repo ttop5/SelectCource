@@ -51,28 +51,32 @@ INSERT INTO classroom VALUES ('', '160', '5#206');
 CREATE TABLE cource(
 cource_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 cource_name varchar(20) NOT NULL,
+credit varchar(5) NOT NULL,
 teacher int(11) NOT NULL,
 classroom int(11) NOT NULL,
+schooltime varchar(30) NOT NULL,
 CONSTRAINT cource_teacher FOREIGN KEY (teacher) REFERENCES user(user_id),
 CONSTRAINT cource_classroom FOREIGN KEY (classroom) REFERENCES classroom(classroom_id)
 )CHARSET=utf8;
 
-INSERT INTO cource VALUES('', '计算机网络', '2', '1');
-INSERT INTO cource VALUES('', '佛教文化', '3', '2');
-INSERT INTO cource VALUES('', '西方艺术鉴赏', '2', '3');
-INSERT INTO cource VALUES('', '新能源技术', '3', '4');
+INSERT INTO cource VALUES('', '计算机网络', '2', '2', '1', '周三9,10节；周五7,8节;[第14-20周]');
+INSERT INTO cource VALUES('', '佛教文化', '1.5', '3', '2', '周三9,10节；周五9,10节；[第5-10周]');
+INSERT INTO cource VALUES('', '西方艺术鉴赏', '1', '2', '3', '周一3,4节；周二5,6节；[第5-12周]');
+INSERT INTO cource VALUES('', '新能源技术', '1.5', '3', '4', '周二7,8节；周六3,4节；[第8-10周]');
 
 CREATE TABLE score(
 score_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 student int(11) NOT NULL, 
 cource int(11) NOT NULL, 
-score varchar(5) NOT NULL,
+pingshi_score varchar(5) NOT NULL,
+qimo_score varchar(5) NOT NULL,
+final_score varchar(5) NOT NULL,
 CONSTRAINT score_student FOREIGN KEY (student) REFERENCES user(user_id),
 CONSTRAINT score_cource FOREIGN KEY (cource) REFERENCES cource(cource_id)
 )CHARSET=utf8;
 
-INSERT INTO score VALUES('', '4', '1', '95');
-INSERT INTO score VALUES('', '4', '2', '60');
-INSERT INTO score VALUES('', '5', '3', '82');
+INSERT INTO score VALUES('', '4', '1', '90', '99', '95');
+INSERT INTO score VALUES('', '4', '2', '70', '55', '60');
+INSERT INTO score VALUES('', '5', '3', '60', '90', '82');
 
 EOF

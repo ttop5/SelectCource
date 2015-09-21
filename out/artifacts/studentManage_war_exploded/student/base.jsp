@@ -51,6 +51,12 @@
                         <ul class="dropdown-menu">
                             <li><a href="infoscore.jsp">成绩查询</a></li>
                             <li><a href="infoscource.jsp">选课情况查询</a></li>
+                            <%--<li><a>--%>
+                                    <%--<form action="infoscource.jsp">--%>
+                                        <%--<input type="submit" value="选课情况查询"/>--%>
+                                    <%--</form>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
                         </ul>
                     </li>
                     <li class="dropdown">
