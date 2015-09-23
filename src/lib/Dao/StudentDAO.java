@@ -33,7 +33,7 @@ public class StudentDAO {
         return str;
     }
 
-    public String getScore() throws SQLException{
+    public String getScore(String email) throws SQLException{
         Statement stmt = null;
         Dbutil dbutil = new Dbutil();
         Connection con = null;
@@ -43,7 +43,7 @@ public class StudentDAO {
         try{
             con = dbutil.getCon();
             stmt = con.createStatement();
-            String sql = "select cource_id, cource_name, credit, pingshi_score, qimo_score, final_score from score, user, cource where student=user_id and cource=cource_id" + ";";
+            String sql = "select cource_id, cource_name, credit, pingshi_score, qimo_score, final_score from score, user, cource where student=user_id and cource=cource_id AND email='" + email + "';";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
                 str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("credit") + "</td>" + "<td>" + rs.getString("pingshi_score") + "</td>" + "<td>" + rs.getString("qimo_score") + "</td>" + "<td>" + rs.getString("final_score") + "</td>" + "</tr>";
@@ -55,20 +55,20 @@ public class StudentDAO {
         return str;
     }
 
-    public String getScource() throws SQLException{
+    public String getScource(String email) throws SQLException{
         Statement stmt = null;
         Dbutil dbutil = new Dbutil();
         Connection con = null;
         ResultSet rs = null;
         String str = "<table class=\"table table-bordered\" id=\"outside\">" +
-                "<tr><th>课程号</th><th>课程名称</th><th>学分</th><th>教师</th><th>上课时间</th><th>上课地点</th></tr>";
+                "<tr><th>课程号</th><th>课程名称</th><th>学分</th><th>上课时间</th><th>上课地点</th></tr>";
         try{
             con = dbutil.getCon();
             stmt = con.createStatement();
-            String sql = "select cource_id, cource_name, credit, name, schooltime, location from score, user, cource, classroom where teacher=user_id and cource=cource_id and classroom=classroom_id" + ";";
+            String sql = "select cource_id, cource_name, credit, schooltime, location from score, user, cource, classroom where student=user_id and cource=cource_id and classroom=classroom_id AND email='" + email + "';";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
-                str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("credit") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("schooltime") + "</td>" + "<td>" + rs.getString("location") + "</td>" + "</tr>";
+                str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("credit") + "</td>" + "<td>" + rs.getString("schooltime") + "</td>" + "<td>" + rs.getString("location") + "</td>" + "</tr>";
             }
             return str + "</table>";
         }catch (Exception e) {
@@ -77,7 +77,7 @@ public class StudentDAO {
         return str;
     }
 
-    public String getUser() throws SQLException{
+    public String getUser(String email) throws SQLException{
         Statement stmt = null;
         Dbutil dbutil = new Dbutil();
         Connection con = null;
@@ -87,7 +87,7 @@ public class StudentDAO {
         try{
             con = dbutil.getCon();
             stmt = con.createStatement();
-            String sql = "select * from user" + ";";
+            String sql = "select * from user WHERE email='" + email + "';";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
                 str = str + "<tr>" + "<td>" + rs.getString("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("sex") + "</td>" +"<td>" + rs.getString("grade") + "</td>" + "<td>" + rs.getString("school") + "</td>" + "<td>" + rs.getString("major") + "</td>" + "<td>" + rs.getString("class") + "</td>" + "<td>" + rs.getString("qq") + "</td>" + "<td>" + rs.getString("phone") + "</td>" + "<td>" + rs.getString("email") + "</td>" + "<td>" + rs.getString("adress") + "</td>" + "<td>" + rs.getString("role") + "</td>" + "</tr>";

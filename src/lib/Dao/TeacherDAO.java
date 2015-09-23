@@ -75,7 +75,7 @@ public class TeacherDAO {
         return str;
     }
 
-    public String getUser() throws SQLException {
+    public String getUser(String email) throws SQLException {
         Statement stmt = null;
         Dbutil dbutil = new Dbutil();
         Connection con = null;
@@ -85,7 +85,7 @@ public class TeacherDAO {
         try{
             con = dbutil.getCon();
             stmt = con.createStatement();
-            String sql = "select * from user" + ";";
+            String sql = "select * from user WHERE email='" + email + "';";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
                 str = str + "<tr>" + "<td>" + rs.getString("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("sex") + "</td>" + "<td>" + rs.getString("school") + "</td>" + "<td>" + rs.getString("qq") + "</td>" + "<td>" + rs.getString("phone") + "</td>" + "<td>" + rs.getString("email") + "</td>" + "<td>" + rs.getString("adress") + "</td>" + "<td>" + rs.getString("role") + "</td>" + "</tr>";

@@ -1,3 +1,4 @@
+<%@ page import="lib.Model.User" %>
 <%--
   Created by IntelliJ IDEA.
   User: ttop5
@@ -18,7 +19,7 @@
     <hr>
     <div>
       <% StudentDAO studentDAO = new StudentDAO();%>
-      <%=studentDAO.getScore()%>
+      <%=studentDAO.getScore(((User)session.getAttribute("currentUser")).getEmail())%>
     </div>
   </div>
 

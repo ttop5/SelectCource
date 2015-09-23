@@ -16,7 +16,7 @@ class varchar(100),
 qq varchar(20),
 phone varchar(20),
 email varchar(60) NOT NULL UNIQUE,
-password varchar(120) NOT NULL,
+password varchar(120) NOT NULL DEFAULT '123456',
 adress varchar(200),
 role int(2) NOT NULL DEFAULT '2' 
 )CHARSET=utf8;
@@ -80,3 +80,4 @@ INSERT INTO score VALUES('', '4', '2', '70', '55', '60');
 INSERT INTO score VALUES('', '5', '3', '60', '90', '82');
 
 EOF
+

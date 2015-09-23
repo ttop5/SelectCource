@@ -1,0 +1,34 @@
+/*courceadd*/
+.courceadd label{
+    padding-top: 10px;
+}
+
+#credit {
+    padding-left: 28px
+}
+
+.courceadd input{
+    width: 250px;
+    height: 30px;
+}
+
+/*useradd*/
+.useradd label{
+    padding-top: 8px;
+    padding-right: 5px;
+}
+
+.useradd input{
+    width: 200px;
+    height: 28px;
+}
+
+/*classroomadd*/
+.classroomadd label{
+    padding-top: 9px;
+}
+
+.classroomadd input{
+    width: 200px;
+    height: 30px;
+}

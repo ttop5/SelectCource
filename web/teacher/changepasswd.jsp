@@ -14,8 +14,27 @@
 <body>
 
   <div class="container">
-    <div class="page-header">
-      <h2>密码修改</h2>
+    <h5><b>当前位置</b>：个人信息 > 密码修改</h5>
+    <hr>
+    <div class="changepasswd">
+      <form action="../changepasswd" method="post">
+        <div>
+          <label>旧密码</label>
+          <input type="text" name="old_password"/>
+        </div>
+        <div>
+          <label>新密码</label>
+          <input type="text" name="new_password"/>
+        </div>
+        <div>
+          <label>确认密码</label>
+          <input type="text" name="new_password"/>
+        </div>
+        <div style="padding-top: 15px">
+          <button type="submit" class="btn btn-default">添加</button>
+          <button type="reset" class="btn btn-default">重置</button>
+        </div>
+      </form>
     </div>
   </div>
 

@@ -1,3 +1,4 @@
+<%@ page import="lib.Model.User" %>
 <%--
   Created by IntelliJ IDEA.
   User: ttop5
@@ -17,7 +18,7 @@
     <h5><b>当前位置</b>：个人信息 > 个人信息修改</h5>
     <hr>
     <% StudentDAO studentDAO = new StudentDAO();%>
-    <%=studentDAO.getUser()%>
+    <%=studentDAO.getUser(((User)session.getAttribute("currentUser")).getEmail())%>
   </div>
 
 </body>

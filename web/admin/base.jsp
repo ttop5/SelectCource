@@ -69,15 +69,23 @@
                         </ul>
                     </li>
                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">教室管理 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="classroomadd.jsp">添加教室</a></li>
+                            <li><a href="classroom.jsp">教室管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学生信息管理 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="scource.jsp">学生选课管理</a></li>
                             <li><a href="score.jsp">学生成绩管理</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a>欢迎您：${currentUser.name}！</a></li>
-                    <li><a href="../signout.jsp">注销</a></li>
+                    <li><a href="../signout.jsp">【注销】</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="lib.Dao.StudentDAO" %>
+<%@ page import="lib.Model.User" %>
 <%--
   Created by IntelliJ IDEA.
   User: ttop5
@@ -69,7 +70,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a>欢迎您，${currentUser.name}同学！</a></li>
-                    <li><a href="../signout.jsp">注销</a></li>
+                    <li><a href="../signout.jsp">【注销】</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

@@ -18,7 +18,7 @@
       <hr>
       <div>
         <% StudentDAO studentDAO = new StudentDAO();%>
-        <%=studentDAO.getScource()%>
+        <%=studentDAO.getScource(((User)session.getAttribute("currentUser")).getEmail())%>
       </div>
   </div>
 

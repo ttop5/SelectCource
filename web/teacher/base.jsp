@@ -13,6 +13,7 @@
     <title>选课管理信息系统</title>
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
     <link href="../static/css/index.css" rel="stylesheet">
+    <link href="../static/css/teacher.css" rel="stylesheet">
 </head>
 <body>
 
@@ -51,10 +52,10 @@
                             <li><a href="infocource.jsp">课程查询</a></li>
                         </ul>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">信息管理 <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学生信息 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="scource.jsp">学生选课管理</a></li>
-                            <li><a href="score.jsp">学生成绩管理</a></li>
+                            <li><a href="scource.jsp">学生选课信息</a></li>
+                            <li><a href="score.jsp">学生成绩信息</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -67,7 +68,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a>欢迎您，${currentUser.name}老师！</a></li>
-                    <li><a href="../signout.jsp">注销</a></li>
+                    <li><a href="../signout.jsp">【注销】</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
