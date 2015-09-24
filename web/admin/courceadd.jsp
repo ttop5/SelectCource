@@ -39,8 +39,8 @@
           <input type="text" placeholder="如：5#305" name="classroom"/>
         </div>
         <br>
-        <button type="submit" class="btn btn-default">添加</button>
-        <button type="reset" class="btn btn-default">重置</button>
+        <button type="submit" class="btn btn-primary">添加</button>
+        <button type="reset" class="btn btn-warning">重置</button>
       </form>
     </div>
   </div>

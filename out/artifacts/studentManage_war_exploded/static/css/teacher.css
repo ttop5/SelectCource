@@ -1,1 +1,5 @@
 /*changepasswd*/
+
+.changepasswd label{
+    padding-top: 9px;
+}

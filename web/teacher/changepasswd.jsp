@@ -19,11 +19,11 @@
     <div class="changepasswd">
       <form action="../changepasswd" method="post">
         <div>
-          <label>旧密码</label>
+          <label style="padding-left: 15px">旧密码</label>
           <input type="text" name="old_password"/>
         </div>
         <div>
-          <label>新密码</label>
+          <label style="padding-left: 15px">新密码</label>
           <input type="text" name="new_password"/>
         </div>
         <div>
@@ -31,8 +31,8 @@
           <input type="text" name="new_password"/>
         </div>
         <div style="padding-top: 15px">
-          <button type="submit" class="btn btn-default">添加</button>
-          <button type="reset" class="btn btn-default">重置</button>
+          <button type="submit" class="btn btn-primary">添加</button>
+          <button type="reset" class="btn btn-warning">重置</button>
         </div>
       </form>
     </div>

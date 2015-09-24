@@ -29,7 +29,9 @@ public class AdminDAO {
             String sql = "select * from notes" + ";";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
-                str = str + "<tr>" + "<td>" + rs.getString("title") + "</td>" + "<td>" + rs.getString("start_time") + "</td>" + "<td>" + rs.getString("stop_time") + "</td>" + "<td>" + rs.getString("description") + "</td>" + "</tr>";
+                str = str + "<tr>" + "<td>" + rs.getString("title") + "</td>" + "<td>" + rs.getString("start_time") + "</td>" + "<td>" + rs.getString("stop_time") + "</td>" + "<td>" + rs.getString("description") + "</td>" +
+                        "<td><button type=\"button\" class=\"btn btn-success\">编辑</button></td>" +
+                        "<td><form action=\"../deletenotes\" method=\"post\"><input name=\"notes_id\" type=\"hidden\" value=\"" + rs.getString("notes_id") + "\"/><button type=\"button\" class=\"btn btn-danger\">删除</button></form></td>" + "</tr>";
             }
             return str + "</table>";
         }catch (Exception e) {
@@ -51,7 +53,9 @@ public class AdminDAO {
             String sql = "select * from user" + ";";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
-                str = str + "<tr>" + "<td>" + rs.getString("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("sex") + "</td>" +"<td>" + rs.getString("grade") + "</td>" + "<td>" + rs.getString("school") + "</td>" + "<td>" + rs.getString("major") + "</td>" + "<td>" + rs.getString("class") + "</td>" + "<td>" + rs.getString("qq") + "</td>" + "<td>" + rs.getString("phone") + "</td>" + "<td>" + rs.getString("email") + "</td>" + "<td>" + rs.getString("adress") + "</td>" + "<td>" + rs.getString("role") + "</td>" + "</tr>";
+                str = str + "<tr>" + "<td>" + rs.getString("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("sex") + "</td>" +"<td>" + rs.getString("grade") + "</td>" + "<td>" + rs.getString("school") + "</td>" + "<td>" + rs.getString("major") + "</td>" + "<td>" + rs.getString("class") + "</td>" + "<td>" + rs.getString("qq") + "</td>" + "<td>" + rs.getString("phone") + "</td>" + "<td>" + rs.getString("email") + "</td>" + "<td>" + rs.getString("adress") + "</td>" + "<td>" + rs.getString("role") + "</td>" +
+                        "<td><button type=\"button\" class=\"btn btn-success\">编辑</button></td>" +
+                        "<td><form action=\"../deleteuser\" method=\"post\"><input name=\"user_id\" type=\"hidden\" value=\"" + rs.getString("user_id") + "\"/><button type=\"button\" class=\"btn btn-danger\">删除</button></form></td>" + "</tr>";
             }
             return str + "</table>";
         }catch (Exception e) {
@@ -73,7 +77,9 @@ public class AdminDAO {
             String sql = "select cource_id, cource_name, credit, name, schooltime, location from score, user, cource, classroom where teacher=user_id and cource=cource_id and classroom=classroom_id" + ";";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
-                str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("credit") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("schooltime") + "</td>" + "<td>" + rs.getString("location") + "</td>" + "</tr>";
+                str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("credit") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("schooltime") + "</td>" + "<td>" + rs.getString("location") + "</td>" +
+                        "<td><button type=\"button\" class=\"btn btn-success\">编辑</button></td>" +
+                        "<td><form action=\"../deletecource\" method=\"post\"><input name=\"cource_id\" type=\"hidden\" value=\"" + rs.getString("cource_id") + "\"/><button type=\"button\" class=\"btn btn-danger\">删除</button></form></td>" + "</tr>";
             }
             return str + "</table>";
         }catch (Exception e) {
@@ -95,7 +101,9 @@ public class AdminDAO {
             String sql = "select * from classroom" + ";";
             rs = stmt.executeQuery(sql);
             while(rs.next()) {
-                str = str + "<tr>" + "<td>" + rs.getInt("classroom_id") + "</td>" + "<td>" + rs.getString("location") + "</td>" + "<td>" + rs.getString("capacity") + "</td>" + "</tr>";
+                str = str + "<tr>" + "<td>" + rs.getInt("classroom_id") + "</td>" + "<td>" + rs.getString("location") + "</td>" + "<td>" + rs.getString("capacity") + "</td>" +
+                        "<td><button type=\"button\" class=\"btn btn-success\">编辑</button></td>" +
+                        "<td><form action=\"../deleteclassroom\" method=\"post\"><input name=\"classroom_id\" type=\"hidden\" value=\"" + rs.getString("classroom_id") + "\"/><button type=\"button\" class=\"btn btn-danger\">删除</button></form></td>" + "</tr>";
             }
             return str + "</table>";
         }catch (Exception e) {
@@ -159,7 +167,7 @@ public class AdminDAO {
             pst.setString(1, notes.getTitle());
             pst.setString(2, notes.getStart_time());
             pst.setString(3, notes.getStop_time());
-            pst.setString(4, notes.getDescription ());
+            pst.setString(4, notes.getDescription());
 
             pst.executeUpdate();
         } catch (Exception e) {
@@ -210,5 +218,21 @@ public class AdminDAO {
         }
         return null;
     }
+
+
+    /*删除数据*/
+    public Notes notesdelete(Connection con, Notes notes) throws SQLException {
+        PreparedStatement pst = null;
+        try {
+            String sql = "delete from notes where notes_id = ?";
+            pst = con.prepareStatement(sql);
+            pst.setString(1, notes.getNotes_id());
+            pst.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
 }

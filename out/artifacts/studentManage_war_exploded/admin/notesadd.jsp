@@ -35,8 +35,8 @@
                     <textarea rows="15" cols="75" name="description"></textarea>
                 </div>
                 <div style="padding-top: 15px">
-                    <button type="submit" class="btn btn-default">添加</button>
-                    <button type="reset" class="btn btn-default">重置</button>
+                    <button type="submit" class="btn btn-primary">添加</button>
+                    <button type="reset" class="btn btn-warning">重置</button>
                 </div>
             </form>
         </div>

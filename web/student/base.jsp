@@ -14,6 +14,7 @@
     <title>选课管理信息系统</title>
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
     <link href="../static/css/index.css" rel="stylesheet">
+    <link href="../static/css/student.css" rel="stylesheet">
 </head>
 <body>
 
