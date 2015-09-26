@@ -1,4 +1,4 @@
-# studentManage
+# 数据库和Java实训项目
 
 ---
 
