@@ -13,3 +13,6 @@ hs_err_pid*
 
 # .idea
 .idea/*
+
+# out
+out/*
