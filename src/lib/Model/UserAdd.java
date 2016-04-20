@@ -1,7 +1,7 @@
 package lib.Model;
 
 /**
- * Created by ttop5 on 15-9-22.
+ * Created by ttop5 on 16-4-22.
  */
 public class UserAdd {
     private String school_num;
@@ -17,10 +17,11 @@ public class UserAdd {
     private String phone;
     private String adress;
 
-    public UserAdd(){
+    public UserAdd() {
         super();
     }
-    public UserAdd(String school_num, String name, String grade, String school, String major, String email, String password, String role, String sex, String qq, String phone, String adress){
+
+    public UserAdd(String school_num, String name, String grade, String school, String major, String email, String password, String role, String sex, String qq, String phone, String adress) {
         this.school_num = school_num;
         this.name = name;
         this.grade = grade;

@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Created by ttop5 on 15-9-10.
+ * Created by ttop5 on 16-4-19.
  */
 public class UserDao {
     public User signin (Connection con, User user) throws SQLException{

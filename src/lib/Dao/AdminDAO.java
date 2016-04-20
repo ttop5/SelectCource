@@ -1,4 +1,5 @@
 package lib.Dao;
+
 import lib.Dao.Dbutil;
 import lib.Model.Classroom;
 import lib.Model.Notes;
@@ -11,146 +12,146 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 
 /**
- * Created by ttop5 on 15-9-17.
+ * Created by ttop5 on 16-4-19.
  */
 
     /*数据查询*/
 public class AdminDAO {
-    public String getNotes() throws SQLException{
+    public String getNotes() throws SQLException {
         Statement stmt = null;
         Dbutil dbutil = new Dbutil();
         Connection con = null;
         ResultSet rs = null;
         String str = "<table class=\"table table-bordered\" id=\"outside\">" +
                 "<tr><th>标题</th><th>开始时间</th><th>结束时间</th><th>公告内容</th></tr>";
-        try{
+        try {
             con = dbutil.getCon();
             stmt = con.createStatement();
             String sql = "select * from notes" + ";";
             rs = stmt.executeQuery(sql);
-            while(rs.next()) {
+            while (rs.next()) {
                 str = str + "<tr>" + "<td>" + rs.getString("title") + "</td>" + "<td>" + rs.getString("start_time") + "</td>" + "<td>" + rs.getString("stop_time") + "</td>" + "<td>" + rs.getString("description") + "</td>" +
                         "<td><button type=\"button\" class=\"btn btn-success\">编辑</button></td>" +
                         "<td><form action=\"../deletenotes\" method=\"post\"><input name=\"notes_id\" type=\"hidden\" value=\"" + rs.getString("notes_id") + "\"/><button type=\"button\" class=\"btn btn-danger\">删除</button></form></td>" + "</tr>";
             }
             return str + "</table>";
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return str;
     }
 
-    public String getUser() throws SQLException{
+    public String getUser() throws SQLException {
         Statement stmt = null;
         Dbutil dbutil = new Dbutil();
         Connection con = null;
         ResultSet rs = null;
         String str = "<table class=\"table table-bordered\" id=\"outside\">" +
                 "<tr><th>学号</th><th>姓名</th><th>性别</th><th>年级</th><th>学院</th><th>专业</th><th>班级</th><th>QQ</th><th>电话</th><th>邮箱</th><th>地址</th><th>角色</th></tr>";
-        try{
+        try {
             con = dbutil.getCon();
             stmt = con.createStatement();
             String sql = "select * from user" + ";";
             rs = stmt.executeQuery(sql);
-            while(rs.next()) {
-                str = str + "<tr>" + "<td>" + rs.getString("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("sex") + "</td>" +"<td>" + rs.getString("grade") + "</td>" + "<td>" + rs.getString("school") + "</td>" + "<td>" + rs.getString("major") + "</td>" + "<td>" + rs.getString("class") + "</td>" + "<td>" + rs.getString("qq") + "</td>" + "<td>" + rs.getString("phone") + "</td>" + "<td>" + rs.getString("email") + "</td>" + "<td>" + rs.getString("adress") + "</td>" + "<td>" + rs.getString("role") + "</td>" +
+            while (rs.next()) {
+                str = str + "<tr>" + "<td>" + rs.getString("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("sex") + "</td>" + "<td>" + rs.getString("grade") + "</td>" + "<td>" + rs.getString("school") + "</td>" + "<td>" + rs.getString("major") + "</td>" + "<td>" + rs.getString("class") + "</td>" + "<td>" + rs.getString("qq") + "</td>" + "<td>" + rs.getString("phone") + "</td>" + "<td>" + rs.getString("email") + "</td>" + "<td>" + rs.getString("adress") + "</td>" + "<td>" + rs.getString("role") + "</td>" +
                         "<td><button type=\"button\" class=\"btn btn-success\">编辑</button></td>" +
                         "<td><form action=\"../deleteuser\" method=\"post\"><input name=\"user_id\" type=\"hidden\" value=\"" + rs.getString("user_id") + "\"/><button type=\"button\" class=\"btn btn-danger\">删除</button></form></td>" + "</tr>";
             }
             return str + "</table>";
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return str;
     }
 
-    public String getCource() throws SQLException{
+    public String getCource() throws SQLException {
         Statement stmt = null;
         Dbutil dbutil = new Dbutil();
         Connection con = null;
         ResultSet rs = null;
         String str = "<table class=\"table table-bordered\" id=\"outside\">" +
                 "<tr><th>课程号</th><th>课程名称</th><th>学分</th><th>教师</th><th>上课时间</th><th>上课地点</th></tr>";
-        try{
+        try {
             con = dbutil.getCon();
             stmt = con.createStatement();
             String sql = "select cource_id, cource_name, credit, name, schooltime, location from score, user, cource, classroom where teacher=user_id and cource=cource_id and classroom=classroom_id" + ";";
             rs = stmt.executeQuery(sql);
-            while(rs.next()) {
+            while (rs.next()) {
                 str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("credit") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("schooltime") + "</td>" + "<td>" + rs.getString("location") + "</td>" +
                         "<td><button type=\"button\" class=\"btn btn-success\">编辑</button></td>" +
                         "<td><form action=\"../deletecource\" method=\"post\"><input name=\"cource_id\" type=\"hidden\" value=\"" + rs.getString("cource_id") + "\"/><button type=\"button\" class=\"btn btn-danger\">删除</button></form></td>" + "</tr>";
             }
             return str + "</table>";
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return str;
     }
 
-    public String getClassroom() throws SQLException{
+    public String getClassroom() throws SQLException {
         Statement stmt = null;
         Dbutil dbutil = new Dbutil();
         Connection con = null;
         ResultSet rs = null;
         String str = "<table class=\"table table-bordered\" id=\"outside\">" +
                 "<tr><th>教室号</th><th>教室名</th><th>容纳人数</th></tr>";
-        try{
+        try {
             con = dbutil.getCon();
             stmt = con.createStatement();
             String sql = "select * from classroom" + ";";
             rs = stmt.executeQuery(sql);
-            while(rs.next()) {
+            while (rs.next()) {
                 str = str + "<tr>" + "<td>" + rs.getInt("classroom_id") + "</td>" + "<td>" + rs.getString("location") + "</td>" + "<td>" + rs.getString("capacity") + "</td>" +
                         "<td><button type=\"button\" class=\"btn btn-success\">编辑</button></td>" +
                         "<td><form action=\"../deleteclassroom\" method=\"post\"><input name=\"classroom_id\" type=\"hidden\" value=\"" + rs.getString("classroom_id") + "\"/><button type=\"button\" class=\"btn btn-danger\">删除</button></form></td>" + "</tr>";
             }
             return str + "</table>";
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return str;
     }
 
-    public String getScource() throws SQLException{
+    public String getScource() throws SQLException {
         Statement stmt = null;
         Dbutil dbutil = new Dbutil();
         Connection con = null;
         ResultSet rs = null;
         String str = "<table class=\"table table-bordered\" id=\"outside\">" +
                 "<tr><th>课程号</th><th>课程名称</th><th>学分</th><th>学号</th><th>学生姓名</th><th>上课时间</th><th>上课地点</th></tr>";
-        try{
+        try {
             con = dbutil.getCon();
             stmt = con.createStatement();
             String sql = "select cource_id, cource_name, credit, school_num, name, schooltime, location from score, user, cource, classroom where student=user_id and cource=cource_id and classroom=classroom_id" + ";";
             rs = stmt.executeQuery(sql);
-            while(rs.next()) {
+            while (rs.next()) {
                 str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("credit") + "</td>" + "<td>" + rs.getString("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("schooltime") + "</td>" + "<td>" + rs.getString("location") + "</td>" + "</tr>";
             }
             return str + "</table>";
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return str;
     }
 
-    public String getScore() throws SQLException{
+    public String getScore() throws SQLException {
         Statement stmt = null;
         Dbutil dbutil = new Dbutil();
         Connection con = null;
         ResultSet rs = null;
         String str = "<table class=\"table table-bordered\" id=\"outside\">" +
                 "<tr><th>课程号</th><th>课程名</th><th>学分</th><th>学号</th><th>姓名</th><th>平时成绩</th><th>期末成绩</th><th>最终成绩</th></tr>";
-        try{
+        try {
             con = dbutil.getCon();
             stmt = con.createStatement();
             String sql = "select cource_id, cource_name, credit, school_num, name, pingshi_score, qimo_score, final_score from score, user, cource where student=user_id and cource=cource_id" + ";";
             rs = stmt.executeQuery(sql);
-            while(rs.next()) {
+            while (rs.next()) {
                 str = str + "<tr>" + "<td>" + rs.getInt("cource_id") + "</td>" + "<td>" + rs.getString("cource_name") + "</td>" + "<td>" + rs.getString("credit") + "</td>" + "<td>" + rs.getString("school_num") + "</td>" + "<td>" + rs.getString("name") + "</td>" + "<td>" + rs.getString("pingshi_score") + "</td>" + "<td>" + rs.getString("qimo_score") + "</td>" + "<td>" + rs.getString("final_score") + "</td>" + "</tr>";
             }
             return str + "</table>";
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return str;

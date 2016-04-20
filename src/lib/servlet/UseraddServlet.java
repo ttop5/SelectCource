@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.Connection;
 
 /**
- * Created by ttop5 on 15-9-22.
+ * Created by ttop5 on 16-4-22.
  */
 @WebServlet(urlPatterns = "/useradd", name = "useradd")
 public class UseraddServlet extends HttpServlet {

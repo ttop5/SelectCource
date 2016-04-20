@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.sql.Connection;
 
 /**
- * Created by ttop5 on 15-9-10.
+ * Created by ttop5 on 16-4-20.
  */
 @WebServlet(urlPatterns = "/signin", name = "signin")
 public class SigninServlet extends HttpServlet {
@@ -32,6 +32,7 @@ public class SigninServlet extends HttpServlet {
         String password = req.getParameter("password");
         req.setAttribute("email", email);
         req.setAttribute("password", password);
+        System.out.print("aaaaaaaaaaaaaa");
 
         if (email.isEmpty() || password.isEmpty()){
             req.setAttribute("error", "用户名或密码为空!");

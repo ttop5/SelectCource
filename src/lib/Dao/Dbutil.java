@@ -5,11 +5,11 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 
 /**
- * Created by ttop5 on 15-9-10.
+ * Created by ttop5 on 16-4-18.
  */
 public class Dbutil {
 
-    String url = "jdbc:mysql://localhost:3306/student_manage?"
+    String url = "jdbc:mysql://localhost:3306/sc?"
             + "user=root&password=passwd&useUnicode=true&characterEncoding=UTF8";
 
     private String jdbcName="com.mysql.jdbc.Driver";
