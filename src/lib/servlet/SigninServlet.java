@@ -32,7 +32,6 @@ public class SigninServlet extends HttpServlet {
         String password = req.getParameter("password");
         req.setAttribute("email", email);
         req.setAttribute("password", password);
-        System.out.print("aaaaaaaaaaaaaa");
 
         if (email.isEmpty() || password.isEmpty()){
             req.setAttribute("error", "用户名或密码为空!");
