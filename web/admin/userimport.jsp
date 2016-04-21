@@ -18,13 +18,14 @@
   <hr>
   <div id="userimport">
     <br>
-    <p>请下载模板按要求填写后导入</p><br>
-    1.<br/>
-    <a href="../../ImportUser.xls">模板下载</a>
-    <br/><br/><br/>
-    2.<input type="file"/>
+    1.下载模板文件
     <br/>
-    <input type="submit" value="导入"/>
+    <a class="btn btn-success" href="files/ImportUser.xls">下载模板</a>
+    <br/><br/><br/>
+    2.用户导入信息
+    <input class="btn btn-default" type="file"/>
+    <br/>
+    <button type="submit" class="btn btn-primary">导入文件</button>
   </div>
 </div>
 
