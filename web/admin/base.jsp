@@ -94,7 +94,7 @@
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
-                Copyright &copy 2015 <a href="http://ttop5.net/"> ttop5 </a>. All right reserved.
+                Copyright &copy 2016 <a href="http://ttop5.net/"> ttop5 </a>. All right reserved.
             </p>
         </div>
     </footer>
